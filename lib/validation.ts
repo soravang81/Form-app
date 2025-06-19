@@ -32,10 +32,9 @@ export function validateStatementOfPurpose(data: FormData["statementOfPurpose"])
   return (
     q1.trim() !== "" &&
     q2.trim() !== "" &&
-    q3.length > 0 &&
     getWordCount(q1) <= 300 &&
     getWordCount(q2) <= 300 &&
-    q3.every((item) => getWordCount(item) <= 300)
+    getWordCount(q3) <= 300
   )
 }
 

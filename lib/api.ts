@@ -19,9 +19,17 @@ export async function uploadDocument(file: File): Promise<string> {
 }
 
 export async function submitForm(formData: FormData): Promise<void> {
+    const { q1, q2, q3 } = formData.statementOfPurpose;
+    const q3Array = q3.split(',').map(s => s.trim()).filter(Boolean);
+
     const formDataToSend = {
         ...formData,
         submittedAt: new Date().toISOString(),
+        statementOfPurpose: {
+            q1,
+            q2,
+            q3: q3Array
+          }
     }
     console.log(formDataToSend)
   const response = await fetch("https://assessments-xhy0.onrender.com/submit", {

@@ -17,9 +17,7 @@ export function StatementOfPurposeStep() {
 
   const handleInputChange = (field: string, value: string) => {
     if (field === 'question3') {
-      // Split by comma and trim each value
-      const values = value.split(',').map(v => v.trim()).filter(v => v.length > 0)
-      updateFormData({ section: "statementOfPurpose", data: { q3: values } })
+      updateFormData({ section: "statementOfPurpose", data: { q3: value } })
     } else if (field === 'question1') {
       updateFormData({ section: "statementOfPurpose", data: { q1: value } })
     } else if (field === 'question2') {

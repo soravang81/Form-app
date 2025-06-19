@@ -25,7 +25,7 @@ export interface DocumentField {
 export interface StatementOfPurpose {
   q1: string
   q2: string
-  q3: string[]
+  q3: string
 }
 
 export interface InterviewAvailability {
